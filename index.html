@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SMA Santa Maria Yogyakarta (STAMA) — Home</title>
+  <meta name="description" content="SMA Santa Maria Yogyakarta — Developing intelligent, faithful, and compassionate leaders." />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --blue:#0b4f7a; /* deep blue */
+      --gold:#d4b05a; /* warm gold */
+      --green:#4b9a6a; /* accent green */
+      --ivory:#fbf7f0;
+      --muted:#6b7785;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:#123; background:var(--ivory);}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max-width); margin:0 auto; padding:0 20px}
+
+    /* NAV */
+    header{background:linear-gradient(90deg, rgba(11,79,122,0.95), rgba(11,79,122,0.85)); color:var(--ivory);}
+    .topbar{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:56px; height:56px; border-radius:8px; background:var(--ivory); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px rgba(2,18,32,0.25)}
+    .logo svg{width:36px; height:36px}
+    .brand h1{font-family:'Merriweather', serif; font-size:18px; margin:0}
+    nav ul{display:flex; gap:14px; list-style:none; margin:0; padding:0}
+    nav a{padding:8px 14px; border-radius:8px; font-weight:600}
+    nav a.cta{background:var(--gold); color:var(--blue)}
+
+    /* HERO */
+    .hero{display:grid; grid-template-columns:1fr; align-items:center; gap:28px; padding:48px 0}
+    .hero-inner{display:flex; gap:36px; align-items:center}
+    .hero-left{color:var(--ivory)}
+    .eyebrow{display:inline-block; background:rgba(255,255,255,0.06); padding:6px 10px; border-radius:999px; font-size:13px; margin-bottom:12px}
+    .headline{font-family:'Merriweather', serif; font-size:44px; line-height:1.02; color:var(--gold); margin:0 0 18px}
+    .sub{color:rgba(255,255,255,0.9); max-width:540px; margin-bottom:18px}
+    .hero-ctas{display:flex; gap:12px}
+    .btn{padding:12px 18px; border-radius:10px; font-weight:700}
+    .btn-primary{background:var(--gold); color:var(--blue)}
+    .btn-outline{background:transparent; border:2px solid rgba(255,255,255,0.14); color:var(--ivory)}
+
+    .hero-right{min-height:240px; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px rgba(2,18,32,0.4)}
+    .hero-image{width:100%; height:100%; display:block; object-fit:cover}
+    /* simple placeholder image styling if user replaces with actual photo */
+
+    /* CONTENT */
+    main{padding:36px 0}
+    .section{padding:36px 0}
+    .section .title{font-family:'Merriweather', serif; font-size:32px; color:var(--blue); margin:0 0 18px}
+    .lead{color:var(--muted); font-size:16px; line-height:1.6}
+
+    /* Mission grid */
+    .mission-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:18px}
+    .mission-card{background:white; padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(6,24,48,0.06); display:flex; gap:12px; align-items:center}
+    .mission-icon{width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:linear-gradient(180deg,rgba(212,176,90,0.12),rgba(75,154,106,0.06))}
+    .mission-card h4{margin:0; font-size:16px; color:var(--blue)}
+    .mission-card p{margin:4px 0 0; color:var(--muted); font-size:14px}
+
+    /* Why choose */
+    .why-list{margin-top:14px}
+    .why-list ul{padding-left:18px}
+
+    /* Gallery */
+    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+    .photo{height:140px; border-radius:10px; overflow:hidden; background:#e7eef5; display:flex;align-items:center;justify-content:center; color:var(--muted); font-weight:700}
+
+    /* Testimonials */
+    .testimonials{display:flex; gap:12px; margin-top:12px}
+    .testimonial{background:white;padding:16px;border-radius:10px; box-shadow:0 6px 18px rgba(6,24,48,0.06)}
+
+    /* FOOTER */
+    footer{padding:28px 0; border-top:1px solid rgba(18,22,36,0.04); margin-top:28px}
+    .footer-grid{display:flex; gap:28px; flex-wrap:wrap}
+
+    /* Responsive */
+    @media (min-width:900px){
+      .hero{padding:64px 0}
+      .hero-inner{grid-template-columns:1fr 520px; display:grid; grid-template-columns:1fr 520px}
+      .headline{font-size:56px}
+      .mission-grid{grid-template-columns:repeat(3,1fr)}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:899px){
+      .hero-inner{flex-direction:column-reverse}
+      .mission-grid{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      nav ul{display:none}
+    }
+    @media (max-width:520px){
+      .mission-grid{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+      .headline{font-size:32px}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:6px 12px;background:rgba(75,154,106,0.08);border-radius:999px;color:var(--green);font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- simple cross + M monogram -->
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <rect x="0" y="0" width="64" height="64" rx="8" fill="white" />
+            <path d="M32 12v40M20 26h24" stroke="#0B4F7A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            <text x="10" y="54" font-family="Merriweather, serif" font-size="10" fill="#0B4F7A">STAMA</text>
+          </svg>
+        </div>
+        <div>
+          <h1>SMA Santa Maria (STAMA)</h1>
+          <div class="muted">Yogyakarta — Education, Faith, Community</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#vision">Vision & Mission</a></li>
+          <li><a href="#activities">Activities</a></li>
+          <li><a class="cta" href="#admissions">Admissions</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="hero">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <span class="eyebrow">SMA Santa Maria • Yogyakarta</span>
+            <h2 class="headline">Developing Intelligent, Faithful, and Compassionate Leaders</h2>
+            <p class="sub">Santa Maria High School Yogyakarta develops intelligent individuals who believe in God and love others and His creation. We combine strong academic programs with character formation, community service, and environmental stewardship.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="#admissions">Join STAMA</a>
+              <a class="btn btn-outline" href="#vision">Learn More</a>
+            </div>
+          </div>
+
+          <div class="hero-right" aria-hidden="true">
+            <!-- placeholder image: user can replace src with real school photo -->
+            <img class="hero-image" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='780'><rect width='100%' height='100%' fill='%230b4f7a'/><text x='50%' y='50%' fill='%23fbf7f0' font-family='Nunito, sans-serif' font-size='48' text-anchor='middle'>School photo / replace with real image</text></svg>" alt="SMA Santa Maria school building">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="vision" class="section">
+      <h3 class="title">Our Vision</h3>
+      <p class="lead">Santa Maria High School Yogyakarta develops intelligent individuals who believe in God and love others and His creation.</p>
+    </section>
+
+    <section id="mission" class="section">
+      <h3 class="title">Our Mission</h3>
+      <p class="muted">We carry out our vision through these core missions — forming faith-filled, socially responsible, skilled, and environmentally-aware graduates ready for the global era.</p>
+      <div class="mission-grid" role="list">
+
+        <article class="mission-card" role="listitem">
+          <div class="mission-icon" aria-hidden>
+            <!-- cross -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20M6 10h12" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h4>Christian Values</h4>
+            <p>Practical appreciation and daily practice of Christian teaching.</p>
+          </div>
+        </article>
+
+        <article class="mission-card">
+          <div class="mission-icon">
+            <!-- book -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 6.5H6.5A2.5 2.5 0 0 0 4 9v10" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h4>Quality Education</h4>
+            <p>Effective, creative, innovative, and enjoyable learning for holistic development.</p>
+          </div>
+        </article>
+
+        <article class="mission-card">
+          <div class="mission-icon">
+            <!-- handshake -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12s3 4 6 1l3-3 4 3s3 2 6-1" stroke="black" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h4>Social Sensitivity</h4>
+            <p>Fostering family spirit and brotherhood through service and empathy.</p>
+          </div>
+        </article>
+
+        <article class="mission-card">
+          <div class="mission-icon">
+            <!-- globe/leaf -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" stroke="black" stroke-width="1.4"/><path d="M4 12c3 1 6-1 8-3" stroke="black" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <h4>Environment</h4>
+            <p>Cultivating care for the environment and sustainable practices.</p>
+          </div>
+        </article>
+
+        <article class="mission-card">
+          <div class="mission-icon">
+            <!-- star -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.6 6.9L22 11l-5 3.9L18.2 22 12 18.3 5.8 22 7 14.9 2 11l7.4-2.1L12 2z" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h4>Talents & Skills</h4>
+            <p>Explore and develop students' talents, preparing them for competition and careers.</p>
+          </div>
+        </article>
+
+        <article class="mission-card">
+          <div class="mission-icon">
+            <!-- rocket -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c3 0 6 6 6 6s-3 3-6 6-6 6-6 6-2-6 6-18z" stroke="black" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h4>Global Readiness</h4>
+            <p>Graduates who master science & technology and are ready for higher studies.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
+        <div style="flex:1;min-width:300px">
+          <h3 class="title">Why Choose STAMA?</h3>
+          <p class="lead">A balanced program mixing academic excellence, character formation, and community life — rooted in Catholic tradition while preparing students for a global future.</p>
+          <div class="why-list">
+            <ul>
+              <li>Long-standing tradition of Catholic education and values.</li>
+              <li>Balanced academic and character formation.</li>
+              <li>Modern facilities: science labs, library, IT resources.</li>
+              <li>Active extracurriculars: arts, sports, environment, and service clubs.</li>
+              <li>Strong alumni network and student achievements.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="flex:1;min-width:260px">
+          <h3 class="title">Student Life — Gallery</h3>
+          <div class="gallery" aria-hidden>
+            <div class="photo">Classroom</div>
+            <div class="photo">Choir & Arts</div>
+            <div class="photo">Environment</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="activities" class="section">
+      <h3 class="title">Events & News</h3>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <div style="flex:1;min-width:240px;background:white;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(6,24,48,0.06)">
+          <strong>Science Fair 2025</strong>
+          <p class="muted">Students showcased sustainable solutions and won regional awards.</p>
+        </div>
+        <div style="flex:1;min-width:240px;background:white;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(6,24,48,0.06)">
+          <strong>Community Service Day</strong>
+          <p class="muted">A day of outreach to nearby villages and environmental cleanups.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section">
+      <h3 class="title">Voices from Our Community</h3>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>"STAMA nurtured my love for learning and for people. The teachers modeled faith and excellence."</p>
+          <div class="muted" style="margin-top:8px;font-weight:700">— Alumni, 2019</div>
+        </div>
+        <div class="testimonial">
+          <p>"We learn to be responsible citizens who care for creation and serve others."</p>
+          <div class="muted" style="margin-top:8px;font-weight:700">— Parent</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="admissions" class="section">
+      <h3 class="title">Admissions</h3>
+      <p class="lead">Join the STAMA family — we welcome students who want strong academics and formation in faith and character.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+        <a class="btn btn-primary" href="#">Register Now</a>
+        <a class="btn" style="background:transparent;border:2px solid var(--blue);color:var(--blue)" href="#">Download Brochure</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div style="flex:1;min-width:220px">
+          <strong>SMA Santa Maria (STAMA)</strong>
+          <p class="muted" style="margin-top:6px">Jl. Example No.1, Yogyakarta • Tel: (0274) 000000 • email@example.sch.id</p>
+        </div>
+        <div style="flex:1;min-width:220px">
+          <strong>Quick Links</strong>
+          <ul class="muted" style="padding-left:18px;margin-top:6px">
+            <li>Vision & Mission</li>
+            <li>Admissions</li>
+            <li>Activities</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div style="flex:1;min-width:220px">
+          <strong>Follow Us</strong>
+          <p class="muted" style="margin-top:6px">Social icons / links — replace with real profiles</p>
+        </div>
+      </div>
+      <div style="margin-top:18px;color:var(--muted);font-size:13px">© <span id="year"></span> SMA Santa Maria Yogyakarta — All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // small interactive bits
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',function(e){
+        const href = this.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
